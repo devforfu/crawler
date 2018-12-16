@@ -13,7 +13,7 @@ func TestFetch(t *testing.T) {
     }
     for _, test := range tests {
         response := Fetch(test.url)
-        if response.success != test.success {
+        if response.Success != test.success {
             t.Errorf("Test case failed: %v", test)
         }
     }
