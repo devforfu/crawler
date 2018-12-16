@@ -12,6 +12,10 @@ type Response struct {
     Error *string
 }
 
+func (r *Response) Failed() bool {
+    return !r.Success
+}
+
 func success(content string) Response {
     return Response{&content,true,nil}
 }
