@@ -17,6 +17,9 @@ $(BINARY_DIR)/%: $(SOURCE_DIR)/%.go
 
 build: $(executables)
 
+clean:
+	rm -rf $(BINARY_DIR)/**
+
 test:
 	$(GOTEST) -v ./src/fetch
 	$(GOTEST) -v ./src/findlinks
