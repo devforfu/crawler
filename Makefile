@@ -15,9 +15,6 @@ all: test build
 $(BINARY_DIR)/%: $(SOURCE_DIR)/%.go
 	$(GOBUILD) -o $@ $<
 
-$(SOURCE_DIR)/src/**/*_test.go:
-	$(GOTEST) -v $@
-
 build: $(executables)
 
 test:
