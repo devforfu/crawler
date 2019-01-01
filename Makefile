@@ -2,7 +2,7 @@ GOCMD=go
 GOBUILD=$(GOCMD) build
 GOCLEAN=$(GOCMD) clean
 GOTEST=$(GOCMD) test
-SOURCE_DIR=.
+SOURCE_DIR=./snippets
 BINARY_DIR=./bin
 
 sources := $(wildcard $(SOURCE_DIR)/*.go)
@@ -22,5 +22,3 @@ clean:
 
 test:
 	$(GOTEST) -v ./src/fetch
-	$(GOTEST) -v ./src/findlinks
-
