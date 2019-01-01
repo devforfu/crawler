@@ -38,6 +38,20 @@ func Extract(url string) ([]string, error) {
     return links, nil
 }
 
+func BreadthFirst(f func(item string) []string, worklist []string) {
+    seen := make(map[string]bool)
+    for len(worklist) > 0 {
+        pendingItems := worklist
+        worklist = nil
+        for _, item := range pendingItems {
+            if !seen[item] {
+                seen[item] = true
+                worklist = append(worklist, f(item)...)
+            }
+        }
+    }
+}
+
 func forEachNode(n *html.Node, pre, post NodeHandler) {
     if pre != nil { pre(n) }
     for c := n.FirstChild; c != nil; c = c.NextSibling {
