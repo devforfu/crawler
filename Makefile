@@ -22,3 +22,4 @@ clean:
 
 test:
 	$(GOTEST) -v ./src/fetch
+	$(GOTEST) -v ./src/links
